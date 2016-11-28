@@ -2265,8 +2265,8 @@ class PHP_CRUD_API {
 $api = new PHP_CRUD_API(array(
  'dbengine'=>'PostgreSQL',
  'hostname'=>'94.177.232.57',
- 'username'=>'oml',
- 'password'=>'tester',
+ 'username'=>'xxx',
+ 'password'=>'xxx',
  'database'=> preg_replace('/[^a-z0-9_.]+/i','',array_shift($request)),
  'charset'=>'UTF8'
 ));
