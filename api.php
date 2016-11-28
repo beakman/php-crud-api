@@ -1812,7 +1812,7 @@ class PHP_CRUD_API {
 		// connect
 		$request = trim($request,'/');
 		if (!$database) {
-			$database  = $this->parseRequestParameter($request, 'a-zA-Z0-9\-_');
+			$database  = $this->parseRequestParameter($request, 'a-zA-Z0-9\-_.');
 		}
 		if (!$db) {
 			$db = new $dbengine();
@@ -2262,15 +2262,15 @@ class PHP_CRUD_API {
 
 // For PostgreSQL 9 use:
 
-// $api = new PHP_CRUD_API(array(
-// 	'dbengine'=>'PostgreSQL',
-// 	'hostname'=>'localhost',
-// 	'username'=>'xxx',
-// 	'password'=>'xxx',
-// 	'database'=>'xxx',
-// 	'charset'=>'UTF8'
-// ));
-// $api->executeCommand();
+$api = new PHP_CRUD_API(array(
+ 'dbengine'=>'PostgreSQL',
+ 'hostname'=>'94.177.232.57',
+ 'username'=>'oml',
+ 'password'=>'tester',
+ 'database'=> preg_replace('/[^a-z0-9_.]+/i','',array_shift($request)),
+ 'charset'=>'UTF8'
+));
+$api->executeCommand();
 
 // For SQLite 3 use:
 
